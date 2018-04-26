@@ -203,7 +203,7 @@ module.exports = {
                     loader: "less-loader",
                     options: {
                         javascriptEnabled: true,
-                        "modifyVars":{ "@primary-color":"red",  }
+                        "modifyVars":{ "@primary-color":"#00936D",  }
                     }
                 }
             ]
