@@ -4,13 +4,13 @@ import { Route, Switch, NavLink, Link } from 'react-router-dom';
 import './App.css';
 import AsyncComponent from './utils/AsyncComponent'
 
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
-
 //import A from './pages/A';
 //import B from './pages/B';
-const A = AsyncComponent(() => import('./pages/A'));
-const B = AsyncComponent(() => import('./pages/B'));
+const A = AsyncComponent(() => import(/* webpackChunkName: "A" */'./pages/A'));
+const B = AsyncComponent(() => import(/* webpackChunkName: "B" */'./pages/B'));
+
+const { SubMenu } = Menu;
+const { Header, Content, Footer, Sider } = Layout;
 
 class App extends Component {
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
           <Menu
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={['2']}
+            defaultSelectedKeys={['1']}
             style={{ lineHeight: '64px' }}
           >
             <Menu.Item key="1"><NavLink exact to="/">首页</NavLink></Menu.Item>
@@ -81,7 +81,7 @@ class App extends Component {
             </Content>
             <Footer style={{ textAlign: 'center' }}>
               Ant Design ©2016 Created by Ant UED
-    </Footer>
+            </Footer>
           </Layout>
         </Layout>
       </Layout>
