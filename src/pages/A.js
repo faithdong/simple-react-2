@@ -3,7 +3,7 @@
 import React from 'react';
 import {
     Form, Select, InputNumber, Switch, Radio,
-    Slider, Button, Upload, Icon, Rate,
+    Slider, Button, Upload, Icon, Rate,Checkbox,
   } from 'antd';
 
   const FormItem = Form.Item;
@@ -91,6 +91,15 @@ class A extends React.Component{
             >
               {getFieldDecorator('switch', { valuePropName: 'checked' })(
                 <Switch />
+              )}
+            </FormItem>
+
+            <FormItem
+              {...formItemLayout}
+              label="Checkbox"
+              >
+              {getFieldDecorator('Checkbox', { valuePropName: 'checked' })(
+                <Checkbox />
               )}
             </FormItem>
     

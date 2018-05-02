@@ -8,7 +8,7 @@ import AsyncComponent from './utils/AsyncComponent'
 //import B from './pages/B';
 const A = AsyncComponent(() => import(/* webpackChunkName: "A" */'./pages/A'));
 const B = AsyncComponent(() => import(/* webpackChunkName: "B" */'./pages/B'));
-const D = AsyncComponent(() => import(/* webpackChunkName: "B" */'./components/TodoBox'));
+const D = AsyncComponent(() => import(/* webpackChunkName: "D" */'./pages/D'));
 //const C = AsyncComponent(() => import(/* webpackChunkName: "C" */'./components/App'));
 
 const { SubMenu } = Menu;
@@ -53,7 +53,7 @@ class App extends Component {
                 <Menu.Item key="1"><NavLink exact to="/">首页</NavLink></Menu.Item>
                 <Menu.Item key="2"><NavLink to="/a">用户管理</NavLink></Menu.Item>
                 <Menu.Item key="3"><NavLink exact to="/b">简单组件封装</NavLink></Menu.Item>
-                <Menu.Item key="5"><NavLink exact to="/d">Todo封装组件</NavLink></Menu.Item>
+                <Menu.Item key="5"><NavLink exact to="/d">Todo封装组合组件</NavLink></Menu.Item>
                 <Menu.Item key="4"><NavLink exact to="/c">Redux简单示例</NavLink></Menu.Item>
               </SubMenu>
               <SubMenu key="sub2" title={<span><Icon type="laptop" />subnav 2</span>}>

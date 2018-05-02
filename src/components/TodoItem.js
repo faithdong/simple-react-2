@@ -1,59 +1,39 @@
 /*
  * @Author: zhongxd 
- * @Date: 2018-05-02 17:50:32 
+ * @Date: 2018-05-02 23:09:09 
  * @Last Modified by: zhongxd
- * @Last Modified time: 2018-05-02 17:59:04
+ * @Last Modified time: 2018-05-03 01:04:08
+ * AddTodo 组件的保存按钮执行后，将把执行结果保存到此组件中
+ * 用于接收并保存 用户输入的结果
  */
 
-//https://github.com/axuebin/react-todolist.git
-
- import React from 'react';
- import {Row, Col, Checkbox, Button} from 'antd';
-
- class TodoItem extends React.Component{
-  
-  constructor(props){
-    super(props);
-    this.toggleComplete = this.toggleComplete.bind(this);
-    this.deleteTask = this.deleteTask.bind(this);
-  };
-
-  toggleComplete = (e) =>{
-    e.preventDefault();
-    this.props.toggleComplete(this.props.taskId);
-  };
-
-  deleteTask = (e) => {
-    e.preventDefault();
-    this.props.deleteTask(this.props.taskId);
-  };
+import React from 'react';
 
 
-  render(){
-    let task = this.props.task;
-    let itemChecked;
+class TodoItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.rowClick = this.rowClick.bind(this);
+    };
+    rowClick = (e) =>{
+        console.log("TodoItem -- rowClick");
+        this.props.rowClick();
+    };
 
-    if(this.props.complete === 'true'){
-      task = <del>{task}</del>
-      itemChecked = true;
-    }else{
-      itemChecked = false;
+    render() {
+        return (
+            <li
+                onClick={this.rowClick}
+                style={{
+                    textDecoration: this.props.completed ? 'line-through' : 'none'
+                }}
+            >
+                {this.props.text}
+            </li>
+        )
     }
-    return(
-      <li className="list-group-item">
-        <Row>
-          <Col span={12}>
-            <Checkbox checked={itemChecked} onChange={this.toggleComplete}/> {task}
-          </Col>
-          <Col span={12}>
-            <Button type="danger" className="pull-right" onClick={this.deleteTask}>删除</Button>
-          </Col>
-        </Row>
-      </li>
-    )
-  }
+
+}
 
 
- }
-
- export default TodoItem;
+export default TodoItem;
