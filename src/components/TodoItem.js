@@ -16,7 +16,7 @@ class TodoItem extends React.Component {
         this.rowClick = this.rowClick.bind(this);
     };
     rowClick = (e) =>{
-        console.log("TodoItem -- rowClick");
+        //console.log("TodoItem -- rowClick");
         this.props.rowClick();
     };
 

@@ -8,7 +8,7 @@
  import React from 'react';
  import {Row,Col,Input,Button} from 'antd';
 
- let count = 99;
+ 
 
  class AddTodo extends React.Component{
     
@@ -23,21 +23,16 @@
 
     //获取输入框的值
     changeAddName = (e) =>{
-        console.log(e.target.value);
+        //console.log(e.target.value);
+        e.preventDefault();
         this.setState({addName:e.target.value});
     };
 
     //保存数据
     saveNewItem = (e) =>{
-        let newItem = {
-            id: count++,
-            text:'ss',
-            complete: "false"
-          }
-       
-        let data = this.state.data
-        data = data.concat([newItem])
-        this.setState({data})
+      e.preventDefault();
+      this.props.saveNewItem(this,this.state.addName);
+      this.setState({addName:''});
     };
 
     render(){
@@ -45,7 +40,7 @@
         return(
             <Row gutter={24}>
                 <Col  span={12}>
-                    <Input value={this.state.addName} onChange={this.changeAddName} placeholder="Basic usage" />
+                    <Input value={this.state.addName} onChange={this.changeAddName}   placeholder="Basic usage" />
                     {/* <Input ref={node => { input = node }}  /> */}
                 </Col>
                 <Col  span={12}>

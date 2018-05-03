@@ -20,34 +20,67 @@ class TodoComponent extends React.Component {
         {
           "id": "1",
           "text": "做一个TodoList Demo",
-          "complete": "false"
+          "completed": true,
         }, {
           "id": "2",
           "text": "学习ES6",
-          "complete": "false"
+          "completed": false,
         }, {
           "id": "3",
           "text": "Hello React",
-          "complete": "true"
+          "completed": true,
         }, {
           "id": "4",
           "text": "找工作",
-          "complete": "false"
+          "completed": false,
         }
-      ]
+      ],
+      
     };
     this.handleRowClick = this.handleRowClick.bind(this);
+    this.saveNewItem = this.saveNewItem.bind(this);
     
   };
 
+  /**
+   * 生成 n 位随机数
+   */
+  generateRandomNum = (n) =>{
+    let rnd = '';
+    for(let i=0;i<n;i++){
+      rnd += Math.floor(Math.random() * 10);
+    }
+    return rnd;
+  };
+
+  /**
+   * 行click
+   */
   handleRowClick(){
-    console.log('TodoItemList --- rowClick');
+    console.log('TodoComponent --- rowClick');
+  };
+
+  /**
+   * 保存数据
+   */
+  saveNewItem = (event,addName) => {
+    let rNum = this.generateRandomNum(4);
+    let newItem = [
+      {
+        id:rNum,
+        completed:false,
+        text:addName
+      }
+    ];
+    let data = this.state.data;
+    data = data.concat(newItem);
+    this.setState({data:data});
   };
  
   render() {
     return (
       <div>
-        <AddTodo />
+        <AddTodo saveNewItem={this.saveNewItem}/>
         <TodoItemList data={this.state.data} rowClick={this.handleRowClick}></TodoItemList>
       </div>
     )

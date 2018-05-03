@@ -21,7 +21,7 @@
 			<TodoItem 
 				key={item.id}
 				text={item.text}
-				complete={item.complete}
+				completed={item.completed}
 				rowClick={this.props.rowClick}
 			/>
 		));
