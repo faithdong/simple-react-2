@@ -7,7 +7,7 @@
  */
 
  import React from 'react';
- import Link from './Link';
+ import FilterLink from './FilterLink';
 
  class TodoFooter extends React.Component{
   constructor(props){
@@ -17,7 +17,7 @@
 
   render(){
     return(
-      <Link />
+      <FilterLink />
     )
 
   }

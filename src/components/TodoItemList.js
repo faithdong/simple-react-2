@@ -20,6 +20,7 @@
 		let taskList = this.props.data.map((item,index) => (
 			<TodoItem 
 				key={item.id}
+				id={item.id}
 				text={item.text}
 				completed={item.completed}
 				rowClick={this.props.rowClick}

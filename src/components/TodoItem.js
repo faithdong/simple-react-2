@@ -15,15 +15,17 @@ class TodoItem extends React.Component {
         super(props);
         this.rowClick = this.rowClick.bind(this);
     };
-    rowClick = (e) =>{
+    rowClick = () =>{
         //console.log("TodoItem -- rowClick");
-        this.props.rowClick();
+        //console.log(this.props.id);
+        this.props.rowClick(this.props.id);
     };
 
     render() {
         return (
             <li
                 onClick={this.rowClick}
+                id={this.props.id}
                 style={{
                     textDecoration: this.props.completed ? 'line-through' : 'none'
                 }}

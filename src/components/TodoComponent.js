@@ -11,6 +11,7 @@
 import React from 'react';
 import AddTodo from './AddTodo';
 import TodoItemList from './TodoItemList';
+import TodoFooter from './TodoFooter';
 
 class TodoComponent extends React.Component {
   constructor(props){
@@ -56,8 +57,15 @@ class TodoComponent extends React.Component {
   /**
    * 行click
    */
-  handleRowClick(){
+  handleRowClick(id){
     console.log('TodoComponent --- rowClick');
+    let data = this.state.data;
+    for(let i=0;i<data.length;i++){
+      if(data[i].id ===  id.toString()){
+        data[i].completed = !data[i].completed;
+      }
+    }
+    this.setState({data:data});
   };
 
   /**
@@ -82,6 +90,7 @@ class TodoComponent extends React.Component {
       <div>
         <AddTodo saveNewItem={this.saveNewItem}/>
         <TodoItemList data={this.state.data} rowClick={this.handleRowClick}></TodoItemList>
+        <TodoFooter />
       </div>
     )
   }
