@@ -17,7 +17,7 @@
 
   render(){
     return(
-      <FilterLink />
+      <FilterLink showAll={this.props.showAll} showActive={this.props.showActive} showCompleted={this.props.showCompleted} />
     )
 
   }

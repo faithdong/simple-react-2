@@ -9,7 +9,7 @@
 
 
  import React from 'react';
- import TodoComponent from '../components/TodoComponent';
+ import TodoComponent from '../components/addtodo/TodoComponent';
 
  class D extends React.Component{
     render(){

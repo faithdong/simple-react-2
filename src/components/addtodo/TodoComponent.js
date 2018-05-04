@@ -40,8 +40,12 @@ class TodoComponent extends React.Component {
     };
     this.handleRowClick = this.handleRowClick.bind(this);
     this.saveNewItem = this.saveNewItem.bind(this);
+    this.all = this.all.bind(this);
+    this.active = this.active.bind(this);
+    this.completed = this.completed.bind(this);
     
   };
+
 
   /**
    * 生成 n 位随机数
@@ -84,13 +88,39 @@ class TodoComponent extends React.Component {
     data = data.concat(newItem);
     this.setState({data:data});
   };
- 
+
+  /**
+   * 显示所有
+   */
+  all = () =>{
+    let data = this.state.data;
+    this.setState({data:data});
+  };
+
+  /**
+   * 未完成
+   */
+  active = () => {
+    let data = this.state.data;
+    let activeData = data.filter( t => !t.completed);
+    this.setState({data:activeData});
+  };
+
+  /**
+   * 完成
+   */
+  completed = () => {
+    let data = this.state.data;
+    let cplData = data.filter( t => t.completed);
+    this.setState({data:cplData});
+  };
+
   render() {
     return (
       <div>
         <AddTodo saveNewItem={this.saveNewItem}/>
         <TodoItemList data={this.state.data} rowClick={this.handleRowClick}></TodoItemList>
-        <TodoFooter />
+        <TodoFooter showAll={this.all} showActive={this.active} showCompleted={this.completed}/>
       </div>
     )
   }
