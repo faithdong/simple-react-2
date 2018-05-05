@@ -10,6 +10,8 @@ const A = AsyncComponent(() => import(/* webpackChunkName: "A" */'./pages/A'));
 const B = AsyncComponent(() => import(/* webpackChunkName: "B" */'./pages/B'));
 const D = AsyncComponent(() => import(/* webpackChunkName: "D" */'./pages/D'));
 //const C = AsyncComponent(() => import(/* webpackChunkName: "C" */'./components/App'));
+const E = AsyncComponent(() => import(/* webpackChunkName: "C" */'./components/addtodoredux/AddTodoReduxCmt'));
+
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
@@ -54,7 +56,7 @@ class App extends Component {
                 <Menu.Item key="2"><NavLink to="/a">用户管理</NavLink></Menu.Item>
                 <Menu.Item key="3"><NavLink exact to="/b">简单组件封装</NavLink></Menu.Item>
                 <Menu.Item key="5"><NavLink exact to="/d">Todo封装组合组件</NavLink></Menu.Item>
-                <Menu.Item key="4"><NavLink exact to="/c">Redux简单示例</NavLink></Menu.Item>
+                <Menu.Item key="4"><NavLink exact to="/e">Redux简单示例</NavLink></Menu.Item>
               </SubMenu>
               <SubMenu key="sub2" title={<span><Icon type="laptop" />subnav 2</span>}>
                 <Menu.Item key="5">option5</Menu.Item>
@@ -82,6 +84,7 @@ class App extends Component {
                 <Route path="/b" component={B} />
                 <Route path="/c" component={B} />
                 <Route path="/d" component={D} />
+                <Route path="/e" component={E} />
               </Switch>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
