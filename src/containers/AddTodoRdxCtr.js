@@ -13,7 +13,7 @@ import {saveNewItem} from '../actions/addtodoredux/AddTodoRdxActions';
 
 
 
-import {Form , Icon, Input, Button } from 'antd';
+import {Form , Input, Button } from 'antd';
 
 
 const FormItem = Form.Item;
@@ -28,8 +28,9 @@ class AddTodoRdxCtr extends React.Component {
     e.preventDefault();
     let formData = this.props.form.getFieldsValue();
     //console.log(formData);
-    this.props.dispatch(saveNewItem(formData));
-    formData.addItem = '';
+    this.props.dispatch(saveNewItem(formData.addItem));
+    //formData.addItem = '';
+    this.props.form.setFieldsValue({'addItem':''});
   }
 
   render() {
@@ -40,7 +41,7 @@ class AddTodoRdxCtr extends React.Component {
           {getFieldDecorator('addItem', {
             rules: [{ required: true, message: 'Please input your username!' }],
           })(
-            <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="addItem" />
+            <Input  placeholder="输入新增项" />
           )}
         </FormItem>
         <FormItem>
@@ -59,7 +60,7 @@ class AddTodoRdxCtr extends React.Component {
 
 
 AddTodoRdxCtr = Form.create()(AddTodoRdxCtr);
-//AddTodoRdxCtr = connect()(AddTodoRdxCtr);
+AddTodoRdxCtr = connect()(AddTodoRdxCtr);
 
 
 export default AddTodoRdxCtr ;

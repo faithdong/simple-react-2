@@ -12,10 +12,17 @@ const AddTodoRdc = (state = [] , action) => {
     case 'GET_INPUT_VALUE':
       return null;
     case  'SAVE_NEW_ITEM':
-      console.log('1111');
-      return null;
+      console.log(action);
+      return [
+        ...state,
+        {
+          id:action.id,
+          text:action.text,
+          completed:false
+        }
+      ];
     default :
-      return null;
+      return state;
 
   }
 }

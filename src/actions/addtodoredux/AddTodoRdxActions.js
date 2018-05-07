@@ -6,12 +6,12 @@
  */
 
 let nextTodoId = 0
-export const saveNewItem = text => {
-  console.log('actions-sveNewItem' + text.addItem);
+export const saveNewItem = (text) => {
+  console.log('actions-sveNewItem----> ' + text);
   return {
     type: 'SAVE_NEW_ITEM',
     id: nextTodoId++,
-    text
+    text:text
   }
 } 
 
