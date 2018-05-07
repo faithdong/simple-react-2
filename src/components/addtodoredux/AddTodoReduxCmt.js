@@ -2,12 +2,12 @@
  * @Author: zhongxd 
  * @Date: 2018-05-05 09:46:18 
  * @Last Modified by: zhongxd
- * @Last Modified time: 2018-05-05 14:37:06
+ * @Last Modified time: 2018-05-07 14:27:48
  * 添加redux的 component
  */
 
  import React from 'react';
- import AddTodoRdx from '../../containers/AddTodoRdx';
+ import AddTodoRdxCtr from '../../containers/AddTodoRdxCtr';
  import TodoListRdx from './TodoListRdx';
  import TodoFilterRdx from './TodoFilterRdx';
 
@@ -16,7 +16,7 @@
   render(){
     return(
       <div>
-        <AddTodoRdx />
+        <AddTodoRdxCtr />
         <TodoListRdx />
         <TodoFilterRdx />
       </div>
