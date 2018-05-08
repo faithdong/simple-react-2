@@ -2,7 +2,7 @@
  * @Author: zhongxd 
  * @Date: 2018-05-07 10:36:39 
  * @Last Modified by: zhongxd
- * @Last Modified time: 2018-05-08 16:35:43
+ * @Last Modified time: 2018-05-08 23:50:10
  */
 
 
@@ -13,7 +13,7 @@ import {todoListItem} from './TodoItemRdc';
 
 const todoApp = combineReducers({
   todos,
-  todoListItem
+  //todoListItem
   //visibilityFilter
 })
 

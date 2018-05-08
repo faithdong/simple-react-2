@@ -2,7 +2,7 @@
  * @Author: zhongxd 
  * @Date: 2018-05-07 10:35:52 
  * @Last Modified by: zhongxd
- * @Last Modified time: 2018-05-07 14:54:41
+ * @Last Modified time: 2018-05-08 23:49:31
  * 
  * Action 与 reducers 关系
  * 理解Action
@@ -28,10 +28,16 @@ const todos = (state = [] , action) => {
           completed:false
         }
       ];
+      case 'ROW_CLICK':
+    console.log("ROW_CLICK");
+    console.log(state);
+      return state.map(todo => 
+        ( todo.id === action.id) ? {...todo,completed: !todo.completed} :todo
+      );
     default :
       return state;
 
   }
 }
 
-export {todos};
+export { todos };
