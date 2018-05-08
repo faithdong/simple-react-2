@@ -3,14 +3,21 @@
  * @Date: 2018-05-07 10:35:52 
  * @Last Modified by: zhongxd
  * @Last Modified time: 2018-05-07 14:54:41
+ * 
+ * Action 与 reducers 关系
+ * 理解Action
+ * 1、首先：Action 在 Redux 官网中 是指对行为的抽象；
+ * 2、对行为的抽象，可以理解为 java中 定义的接口；
+ * 理解reducers
+ * 1、可以理解为 像是在java中  实现接口的 实现类的方法
+ * 
+ * 所以两者之间像是 接口定义  与 实现接口 的关系
  */
 
 
 
-const AddTodoRdc = (state = [] , action) => {
+const todos = (state = [] , action) => {
   switch(action.type){
-    case 'GET_INPUT_VALUE':
-      return null;
     case  'SAVE_NEW_ITEM':
       console.log(action);
       return [
@@ -27,4 +34,4 @@ const AddTodoRdc = (state = [] , action) => {
   }
 }
 
-export default AddTodoRdc;
+export {todos};

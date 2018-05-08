@@ -2,16 +2,18 @@
  * @Author: zhongxd 
  * @Date: 2018-05-07 10:36:39 
  * @Last Modified by: zhongxd
- * @Last Modified time: 2018-05-07 14:44:48
+ * @Last Modified time: 2018-05-08 16:35:43
  */
 
 
 
 import { combineReducers } from 'redux';
-import AddTodoRdc from './AddTodoRdc';
+import {todos} from './AddTodoRdc';
+import {todoListItem} from './TodoItemRdc';
 
 const todoApp = combineReducers({
-  AddTodoRdc,
+  todos,
+  todoListItem
   //visibilityFilter
 })
 
