@@ -29,11 +29,11 @@ const todos = (state = [] , action) => {
         }
       ];
       case 'ROW_CLICK':
-    console.log("ROW_CLICK");
-    console.log(state);
-      return state.map(todo => 
-        ( todo.id === action.id) ? {...todo,completed: !todo.completed} :todo
-      );
+        console.log("ROW_CLICK");
+        console.log(state);
+        return state.map(todo => 
+          ( todo.id === action.id) ? {...todo,completed: !todo.completed} :todo
+        );
     default :
       return state;
 

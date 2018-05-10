@@ -23,7 +23,7 @@
   render(){
     return(
       <li onClick={this.rowClick}
-        style={{TextDecoder:this.props.completed ? 'line-through':'none',
+        style={{textDecoration:this.props.completed ? 'line-through':'none',
         cursor: this.props.completed ? 'default' : 'pointer',  
         color: this.props.completed ? '#f00' : '#000'  }}>
         {this.props.text}
