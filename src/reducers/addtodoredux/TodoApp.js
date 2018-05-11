@@ -9,7 +9,6 @@
 
 import { combineReducers } from 'redux';
 import {todos} from './AddTodoRdc';
-import {todoListItem} from './TodoItemRdc';
 
 const todoApp = combineReducers({
   todos,

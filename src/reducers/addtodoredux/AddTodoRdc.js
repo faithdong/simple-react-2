@@ -2,7 +2,7 @@
  * @Author: zhongxd 
  * @Date: 2018-05-07 10:35:52 
  * @Last Modified by: zhongxd
- * @Last Modified time: 2018-05-08 23:49:31
+ * @Last Modified time: 2018-05-11 16:44:47
  * 
  * Action 与 reducers 关系
  * 理解Action
@@ -34,6 +34,12 @@ const todos = (state = [] , action) => {
         return state.map(todo => 
           ( todo.id === action.id) ? {...todo,completed: !todo.completed} :todo
         );
+      case 'SHOW_ALL':
+        console.log('reducers-->SHOW_ALL');
+        return todos;
+      case 'SHOW_ACTION':
+        console.log('reducers-->SHOW_ACTION');
+        return todos.filter(todo => !todo.completed);  
     default :
       return state;
 

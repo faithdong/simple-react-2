@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom'
- import { Provider } from 'react-redux';
- import thunk from 'redux-thunk';
- import { createStore ,applyMiddleware } from 'redux';
- import todoApp from './reducers/addtodoredux/TodoApp';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import todoApp from './reducers/addtodoredux/TodoApp';
 import { HashRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';

@@ -2,13 +2,13 @@
  * @Author: zhongxd 
  * @Date: 2018-05-05 10:45:15 
  * @Last Modified by: zhongxd
- * @Last Modified time: 2018-05-07 17:19:50
+ * @Last Modified time: 2018-05-11 16:47:27
  * 添加项的容器组件
  */
 
 
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import {saveNewItem} from '../actions/addtodoredux/AddTodoRdxActions';
 
 
