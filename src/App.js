@@ -11,6 +11,8 @@ const B = AsyncComponent(() => import(/* webpackChunkName: "B" */'./pages/B'));
 const D = AsyncComponent(() => import(/* webpackChunkName: "D" */'./pages/D'));
 //const C = AsyncComponent(() => import(/* webpackChunkName: "C" */'./components/App'));
 const E = AsyncComponent(() => import(/* webpackChunkName: "C" */'./components/addtodoredux/AddTodoReduxCmt'));
+const F = AsyncComponent(() => import(/* webpackChunkName: "F" */'./components/todoscpt/TodoApp'));
+
 
 
 const { SubMenu } = Menu;
@@ -53,10 +55,11 @@ class App extends Component {
               style={{ height: '100%' }}>
               <SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
                 <Menu.Item key="1"><NavLink exact to="/">首页</NavLink></Menu.Item>
-                <Menu.Item key="2"><NavLink to="/a">用户管理</NavLink></Menu.Item>
+                <Menu.Item key="2"><NavLink to="/a">使用antd组件</NavLink></Menu.Item>
                 <Menu.Item key="3"><NavLink exact to="/b">简单组件封装</NavLink></Menu.Item>
                 <Menu.Item key="5"><NavLink exact to="/d">Todo封装组合组件</NavLink></Menu.Item>
                 <Menu.Item key="4"><NavLink exact to="/e">Redux简单示例</NavLink></Menu.Item>
+                <Menu.Item key="6"><NavLink exact to="/f">Todo-Redux实例</NavLink></Menu.Item>
               </SubMenu>
               <SubMenu key="sub2" title={<span><Icon type="laptop" />subnav 2</span>}>
                 <Menu.Item key="5">option5</Menu.Item>
@@ -85,6 +88,7 @@ class App extends Component {
                 <Route path="/c" component={B} />
                 <Route path="/d" component={D} />
                 <Route path="/e" component={E} />
+                <Route path="/f" component={F} />
               </Switch>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
