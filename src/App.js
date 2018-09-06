@@ -88,7 +88,6 @@ class App extends Component {
                 <Route path="/c" component={B} />
                 <Route path="/d" component={D} />
                 <Route path="/e" component={E} />
-                <Route path="/f" component={F} />
               </Switch>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
